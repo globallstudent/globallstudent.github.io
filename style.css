@@ -54,7 +54,9 @@ body {
 .sheet a:hover { text-decoration: underline; }
 
 /* Header */
-.header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8mm; flex-wrap: wrap; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; gap: 6mm; }
+.header > :first-child { min-width: 0; }
+.contact-right { flex: none; }
 h1 { font-size: 2.135em; font-weight: 700; letter-spacing: -0.3px; line-height: 1.1; }
 .tagline { font-size: 1.124em; color: #444; margin-top: 1.5mm; }
 .contact-right { text-align: right; font-size: .989em; line-height: 1.5; padding-top: 1mm; }
