@@ -1,0 +1,119 @@
+/* Asliddin Abdumannonov — resume stylesheet.
+   Screen: responsive "sheet on a desk". Print: exact A4, identical to the PDF. */
+
+:root {
+  --paper:  #ffffff;
+  --ink:    #1a1a1a;
+  --accent: #2a6496;
+  --muted:  #555555;
+  --rule:   #c9c9c9;
+  --desk:   #eceef1;
+  --desk-fg:#41454d;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --desk: #17181b; --desk-fg: #9aa0aa; }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--desk);
+  padding: 20px 12px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---- screen-only toolbar ---- */
+.bar {
+  width: 210mm; max-width: 100%;
+  display: flex; justify-content: flex-end; gap: 10px;
+  font-size: 13px; color: var(--desk-fg);
+}
+.bar a {
+  color: inherit; text-decoration: none;
+  border: 1px solid currentColor; border-radius: 5px;
+  padding: 5px 11px; opacity: .75;
+}
+.bar a:hover { opacity: 1; }
+
+/* ---- the sheet ---- */
+.sheet {
+  width: 210mm; max-width: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 12.5px;
+  line-height: 1.29;
+  padding: 9mm clamp(16px, 5vw, 13mm) 7mm;
+  box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 8px 28px rgba(0,0,0,.10);
+  border-radius: 2px;
+}
+.sheet a { color: var(--accent); text-decoration: none; }
+.sheet a:hover { text-decoration: underline; }
+
+/* Header */
+.header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8mm; flex-wrap: wrap; }
+h1 { font-size: 2.135em; font-weight: 700; letter-spacing: -0.3px; line-height: 1.1; }
+.tagline { font-size: 1.124em; color: #444; margin-top: 1.5mm; }
+.contact-right { text-align: right; font-size: .989em; line-height: 1.5; padding-top: 1mm; }
+.contact-row { font-size: .989em; color: #333; margin-top: 1.2mm; }
+.contact-row span + span::before { content: " · "; color: #999; }
+
+/* Sections */
+h2 {
+  font-size: 1.180em; font-weight: 700; color: var(--accent);
+  margin: 2.1mm 0 0.6mm; padding-bottom: 0.6mm;
+  border-bottom: 0.5pt solid var(--rule);
+}
+.summary { margin-top: 1mm; }
+
+/* Jobs */
+.job { margin-top: 1.4mm; }
+.job:first-of-type { margin-top: 1mm; }
+.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+.job-title { font-size: 1.079em; }
+.job-title b { font-weight: 700; }
+.job-dates { font-size: .966em; color: var(--muted); font-style: italic; white-space: nowrap; }
+.job-sub { font-size: .989em; color: var(--muted); font-style: italic; margin-top: 0.3mm; }
+ul { margin: 0.8mm 0 0 4.2mm; list-style: none; }
+li { margin-bottom: 0.45mm; padding-left: 2.6mm; position: relative; }
+li::before { content: "◦"; position: absolute; left: 0; color: var(--accent); }
+
+/* Skills */
+.skills p { margin-bottom: 0.5mm; }
+.skills b { font-weight: 600; }
+
+.edu-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+.muted { color: var(--muted); font-style: italic; font-size: .989em; }
+
+/* Narrow screens: let the two header columns stack cleanly */
+@media (max-width: 620px) {
+  .header { flex-direction: column; gap: 2mm; }
+  .contact-right { text-align: left; padding-top: 0; }
+  .job-head, .edu-head { flex-direction: column; gap: 0; }
+  .job-dates { font-style: normal; }
+}
+
+/* ---- print: restore the exact A4 document ---- */
+@page { size: A4; margin: 0; }
+@media print {
+  :root { --desk: #fff; }
+  body {
+    display: block; background: #fff; padding: 0;
+    width: 210mm;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .bar { display: none !important; }
+  .sheet {
+    width: 210mm; max-width: none;
+    font-size: 8.9pt;
+    padding: 9mm 13mm 7mm;
+    box-shadow: none; border-radius: 0;
+  }
+  .sheet a { color: var(--accent); }
+  .header, .job-head, .edu-head { flex-direction: row; gap: 0; }
+  .contact-right { text-align: right; padding-top: 1mm; }
+  .job-dates { font-style: italic; }
+}

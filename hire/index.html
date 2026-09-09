@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asliddin Abdumannonov — Backend Engineer</title>
+<meta name="description" content="Backend engineer (Python, Go) — microservices, payment and banking integrations, real-time systems. Tashkent, Uzbekistan.">
+<meta name="author" content="Asliddin Abdumannonov">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Asliddin Abdumannonov — Backend Engineer">
+<meta property="og:description" content="Backend engineer (Python, Go) — microservices, payment and banking integrations, real-time systems. Tashkent, Uzbekistan.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Helvetica,Arial' font-weight='700' fill='%232a6496'>A</text></svg>">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="sheet">
+
+<div class="header">
+  <div>
+    <h1>Asliddin Abdumannonov</h1>
+    <div class="tagline">Backend Engineer — Python · Go | Tashkent, Uzbekistan</div>
+  </div>
+</div>
+<h2>Summary</h2>
+<p class="summary">
+Backend engineer with production experience in <b>Python</b> and <b>Go</b> across fintech and healthcare — microservices,
+payment and banking integrations (10+ banks), real-time systems, and LLM/agent workflows. Currently leading a 4-person
+backend team building a healthcare platform serving 11,000+ users.
+</p>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-title"><b>Team Lead &amp; Backend Developer</b>, Onlayn Hamshira <span class="muted">(remote) · <a href="https://app.onlaynhamshira.uz">app.onlaynhamshira.uz</a></span></div>
+    <div class="job-dates">Jun 2025 – Present</div>
+  </div>
+  <div class="job-sub">On-demand home-healthcare platform — 11,000+ users, 300+ active nurses, 13,000+ completed orders.</div>
+  <ul>
+    <li>Lead a 4-person backend team; own architecture decisions, releases and code review across the platform backend.</li>
+    <li>Re-architected a legacy PHP (Yii2) monolith into 5 async Python microservices (FastAPI, SQLAlchemy 2.0, PostgreSQL 16 + PostGIS, RabbitMQ, Redis, Celery) with database-per-service design.</li>
+    <li>Designed a distributed order-offering system that matches each request to nearby nurses in real time — geospatial (PostGIS) candidate selection, simultaneous offer broadcast over WebSockets and push, and race-safe first-accept assignment.</li>
+    <li>Built real-time nurse GPS tracking and order updates over WebSockets, scaled horizontally with Redis pub/sub and hardened with ack-based delivery and message replay on reconnect.</li>
+    <li>Designed the payment service — Payme, Click (incl. mini-app), Paynet, Hambi and Hamkorbank — with a transactional outbox, webhook signature verification and a double-entry wallet ledger for nurse earnings and withdrawals.</li>
+    <li>Migrated live production data from the legacy system with zero service interruption.</li>
+    <li>Manage DevOps for the platform: Kubernetes deployments of both backend and frontend, GitLab CI/CD with automated per-service migrations, and Prometheus + Sentry observability.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-title"><b>Backend Developer</b>, AIBA — AI Business Assistant <span class="muted">· <a href="https://aiba.uz">aiba.uz</a></span></div>
+    <div class="job-dates">Dec 2025 – Jun 2026</div>
+  </div>
+  <div class="job-sub">Fintech startup — AI-powered accounting platform serving 200+ business clients and 10+ accounting outsourcing firms.</div>
+  <ul>
+    <li>Worked across all backend microservices of the platform — banking, tax, e-invoicing, payments, 1C accounting and the AI hub (FastAPI, PostgreSQL, Celery, RabbitMQ) — and contributed to core architecture decisions.</li>
+    <li>Integrated internet-banking automation for 10+ Uzbek banks: payment creation and drafts, payroll registers, salary and treasury operations, and OTP-based authentication — on async task pipelines with retries, hard timeouts and credential-lock safeguards.</li>
+    <li>Built tax-authority integrations end-to-end: a tax-mail subsystem with incremental sync, caching, atomic writes and Telegram alerts, plus fiscal-cheque and reconciliation reporting services.</li>
+    <li>Delivered e-invoicing (EDI) document sync and digital-signature (E-IMZO) workflows, a token-signing service replacing vendor middleware for USB security keys with concurrent multi-token support, and desktop bank-portal connectors.</li>
+    <li>Implemented platform-wide soft delete via RabbitMQ consumers, passkey (WebAuthn) login, AI-assistant tools (LangGraph, 66-tool agent), and an OCR captcha-solving microservice enabling automated bank-portal sync.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-title"><b>Backend Developer</b>, w2w <span class="muted">(software agency) · <a href="https://w2w.uz">w2w.uz</a></span></div>
+    <div class="job-dates">Jun 2025 – Jun 2026</div>
+  </div>
+  <ul>
+    <li>Developed an Amadeus GDS flight search and booking automation platform — HTTP-based Go microservices (fetcher and session-manager, multi-tenant) alongside Node.js/FeathersJS, MongoDB and Puppeteer: automated GDS sessions with keepalive and exponential backoff, fare-search and booking logic, real-time Socket.IO updates, Telegram alerting and per-client Docker/Traefik deployments.</li>
+    <li>Designed the PostgreSQL data model for a CRM serving the Jizzakh Free Economic Zone (Django/DRF) — investment projects, enterprises, land-plot allocation, RBAC, documents and reporting on a reusable base layer with UUID identifiers, soft delete and audit timestamps; set up Docker and Celery infrastructure.</li>
+    <li>Delivered the initial build of Onlayn Hamshira (continued above as Team Lead).</li>
+  </ul>
+</div>
+
+<h2>Skills</h2>
+<div class="skills">
+  <p><b>Languages:</b> Python, Go, SQL</p>
+  <p><b>Backend:</b> FastAPI, Django / DRF, Gin, SQLAlchemy, microservices, REST, WebSockets, gRPC, Celery, RabbitMQ, async I/O</p>
+  <p><b>Data:</b> PostgreSQL (PostGIS, pgvector), Redis, MongoDB, MinIO/S3, Alembic</p>
+  <p><b>AI / LLM:</b> LangGraph, LangChain, OpenAI, Gemini, RAG &amp; embeddings, agent tool design</p>
+  <p><b>Integrations:</b> bank internet-banking APIs, Payme / Click / Paynet, Soliq tax API, E-IMZO digital signing, Telegram bots (aiogram)</p>
+  <p><b>DevOps:</b> Docker, Kubernetes, GitLab CI/CD, GCP, Terraform, Prometheus, Grafana, Sentry, Playwright</p>
+</div>
+
+<h2>Education</h2>
+<div class="edu-head">
+  <div><b>Inha University in Tashkent</b> — B.Sc. Computer &amp; Information Engineering</div>
+  <div class="job-dates">Sep 2023 – 2025</div>
+</div>
+<div class="muted">Completed 2 years (currently on academic break). Focus: Algorithms &amp; Data Structures, Systems, AI &amp; ML.</div>
+
+<h2>Languages</h2>
+<p>Uzbek — native · English — professional working proficiency</p>
+
+</main>
+</body>
+</html>
