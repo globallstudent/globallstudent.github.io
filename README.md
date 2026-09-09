@@ -1,32 +1,18 @@
-# globallstudent.github.io
+# Asliddin Abdumannonov — Resume
 
-Personal resume site for Asliddin Abdumannonov — Backend Engineer (Python · Go).
+Source for my resume site: **https://globallstudent.github.io**
 
-| URL | Contents |
+| Path | Contents |
 |---|---|
-| `/` | Full resume, including email, phone and Telegram |
-| `/hire` | Identical resume **without personal contact details** |
-| `/asliddin_abdumannonov_resume.pdf` | A4 PDF, rendered from `/` |
+| `/` | Resume, with contact details |
+| `/hire` | Same resume, without contact details |
+| `/asliddin_abdumannonov_resume.pdf` | A4 PDF |
 
-## Why two versions
+## Building
 
-Freelance platforms (Upwork among them) prohibit sharing contact information
-before a contract starts, and scan profiles and proposals for it. `/hire` is the
-version that is safe to link from those platforms. Employer websites are kept on
-both pages — they are references, not contact channels.
+All content lives in `_body.html`. Run `./build.sh` to regenerate both pages and
+re-render the PDF. The generated HTML is overwritten on every build, so edit
+`_body.html` rather than `index.html` or `hire/index.html`.
 
-## Editing
-
-All resume content lives in **`_body.html`** (everything below the name header).
-Both pages and the PDF are generated from it:
-
-```sh
-./build.sh
-```
-
-That rewrites `index.html` and `hire/index.html`, then re-renders the PDF with
-headless Chrome. Never edit the generated HTML directly — it will be overwritten.
-
-Name and contact details live in the two header blocks inside `build.sh`.
-Styling is in `style.css`; the `@media print` block at the bottom restores the
-exact A4 layout, so the PDF stays identical no matter how the screen view changes.
+Styling is in `style.css`. The `@media print` block keeps the PDF on a fixed A4
+layout regardless of how the screen view changes.

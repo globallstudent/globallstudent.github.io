@@ -56,9 +56,6 @@ EOF
 } > index.html
 
 # ---------- hire/index.html : no personal contact details ----------
-# Safe to link from platforms (e.g. Upwork) that prohibit sharing contact
-# information before a contract starts. Employer sites stay — they are references,
-# not contact channels.
 {
   head_of "../style.css" "Asliddin Abdumannonov — Backend Engineer" "$DESC"
   cat <<'EOF'
