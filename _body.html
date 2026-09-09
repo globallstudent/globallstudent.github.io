@@ -1,11 +1,27 @@
 <h2>Summary</h2>
 <p class="summary">
-Backend engineer with production experience in <b>Python</b> and <b>Go</b> across fintech and healthcare — microservices,
-payment and banking integrations (10+ banks), real-time systems, and LLM/agent workflows. Currently leading a 4-person
-backend team building a healthcare platform serving 11,000+ users.
+Backend engineer with production experience in <b>Python</b> and <b>Go</b> across logistics, fintech and healthcare —
+microservices, payment and banking integrations (10+ banks), real-time systems and LLM/agent workflows. Currently building
+multi-tenant SaaS for the US auto-transport industry and leading a 4-person backend team on a healthcare platform.
 </p>
 
 <h2>Experience</h2>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-title"><b>Backend Developer</b>, TheCargo <span class="muted">· <a href="https://thecargo.io">thecargo.io</a></span></div>
+    <div class="job-dates">Jul 2026 – Present</div>
+  </div>
+  <div class="job-sub">Multi-tenant SaaS for the US auto-transport industry — shipment dispatch, carrier load boards, payments and customer messaging.</div>
+  <ul>
+    <li>Build and maintain services across a 12-service Python backend (FastAPI, async SQLAlchemy 2.0, PostgreSQL, Celery, RabbitMQ, Redis) spanning shipments, billing, communication, auth, analytics, audit and load-board integration.</li>
+    <li>Delivered the platform admin console end to end — a cross-service admin API over seven microservices behind a shared cross-tenant repository and token guard, plus its 65-screen React 19 / TanStack front end.</li>
+    <li>Built the premium iMessage subsystem: per-line contact allowances and slot metering, automatic fallback to standard SMS when an allowance is exhausted, vendor-accurate cost accounting, and delivery analytics for the operations panel.</li>
+    <li>Unified sequences, broadcasts and automations behind a single campaign surface, with stage-aware suppression so automations stop when a shipment leaves their stage, and per-line gating for outbound AI calls.</li>
+    <li>Shipped payments and commission features on Stripe — refund-to-payment and processor attribution, agent commission proposals, payroll runs with approve/unwind transitions, and a cached payment-overview endpoint.</li>
+    <li>Hardened cross-tenant auth and audit: session revocation on password reset, email change and deactivation, platform-wide email uniqueness, and team-scoped audit and dashboard visibility.</li>
+  </ul>
+</div>
 
 <div class="job">
   <div class="job-head">
@@ -16,11 +32,9 @@ backend team building a healthcare platform serving 11,000+ users.
   <ul>
     <li>Lead a 4-person backend team; own architecture decisions, releases and code review across the platform backend.</li>
     <li>Re-architected a legacy PHP (Yii2) monolith into 5 async Python microservices (FastAPI, SQLAlchemy 2.0, PostgreSQL 16 + PostGIS, RabbitMQ, Redis, Celery) with database-per-service design.</li>
-    <li>Designed a distributed order-offering system that matches each request to nearby nurses in real time — geospatial (PostGIS) candidate selection, simultaneous offer broadcast over WebSockets and push, and race-safe first-accept assignment.</li>
-    <li>Built real-time nurse GPS tracking and order updates over WebSockets, scaled horizontally with Redis pub/sub and hardened with ack-based delivery and message replay on reconnect.</li>
+    <li>Designed a distributed order-offering system matching each request to nearby nurses in real time — PostGIS candidate selection, simultaneous offer broadcast and race-safe first-accept assignment — plus live GPS tracking over WebSockets, scaled with Redis pub/sub and hardened with ack-based delivery and replay on reconnect.</li>
     <li>Designed the payment service — Payme, Click (incl. mini-app), Paynet, Hambi and Hamkorbank — with a transactional outbox, webhook signature verification and a double-entry wallet ledger for nurse earnings and withdrawals.</li>
-    <li>Migrated live production data from the legacy system with zero service interruption.</li>
-    <li>Manage DevOps for the platform: Kubernetes deployments of both backend and frontend, GitLab CI/CD with automated per-service migrations, and Prometheus + Sentry observability.</li>
+    <li>Migrated live production data off the legacy system with zero downtime, and own platform DevOps — Kubernetes deployments, GitLab CI/CD with automated per-service migrations, and Prometheus + Sentry observability.</li>
   </ul>
 </div>
 
@@ -31,11 +45,11 @@ backend team building a healthcare platform serving 11,000+ users.
   </div>
   <div class="job-sub">Fintech startup — AI-powered accounting platform serving 200+ business clients and 10+ accounting outsourcing firms.</div>
   <ul>
-    <li>Worked across all backend microservices of the platform — banking, tax, e-invoicing, payments, 1C accounting and the AI hub (FastAPI, PostgreSQL, Celery, RabbitMQ) — and contributed to core architecture decisions.</li>
-    <li>Integrated internet-banking automation for 10+ Uzbek banks: payment creation and drafts, payroll registers, salary and treasury operations, and OTP-based authentication — on async task pipelines with retries, hard timeouts and credential-lock safeguards.</li>
+    <li>Worked across all backend microservices — banking, tax, e-invoicing, payments, 1C accounting and the AI hub (FastAPI, PostgreSQL, Celery, RabbitMQ) — and contributed to core architecture decisions.</li>
+    <li>Integrated internet-banking automation for 10+ Uzbek banks — payments and drafts, payroll registers, salary and treasury operations, OTP authentication — on async task pipelines with retries, hard timeouts and credential-lock safeguards.</li>
     <li>Built tax-authority integrations end-to-end: a tax-mail subsystem with incremental sync, caching, atomic writes and Telegram alerts, plus fiscal-cheque and reconciliation reporting services.</li>
     <li>Delivered e-invoicing (EDI) document sync and digital-signature (E-IMZO) workflows, a token-signing service replacing vendor middleware for USB security keys with concurrent multi-token support, and desktop bank-portal connectors.</li>
-    <li>Implemented platform-wide soft delete via RabbitMQ consumers, passkey (WebAuthn) login, AI-assistant tools (LangGraph, 66-tool agent), and an OCR captcha-solving microservice enabling automated bank-portal sync.</li>
+    <li>Implemented platform-wide soft delete via RabbitMQ consumers, passkey (WebAuthn) login, LangGraph tools for a 66-tool AI assistant, and an OCR captcha-solving microservice enabling automated bank-portal sync.</li>
   </ul>
 </div>
 
@@ -45,20 +59,19 @@ backend team building a healthcare platform serving 11,000+ users.
     <div class="job-dates">Jun 2025 – Jun 2026</div>
   </div>
   <ul>
-    <li>Developed an Amadeus GDS flight search and booking automation platform — HTTP-based Go microservices (fetcher and session-manager, multi-tenant) alongside Node.js/FeathersJS, MongoDB and Puppeteer: automated GDS sessions with keepalive and exponential backoff, fare-search and booking logic, real-time Socket.IO updates, Telegram alerting and per-client Docker/Traefik deployments.</li>
-    <li>Designed the PostgreSQL data model for a CRM serving the Jizzakh Free Economic Zone (Django/DRF) — investment projects, enterprises, land-plot allocation, RBAC, documents and reporting on a reusable base layer with UUID identifiers, soft delete and audit timestamps; set up Docker and Celery infrastructure.</li>
-    <li>Delivered the initial build of Onlayn Hamshira (continued above as Team Lead).</li>
+    <li>Sole developer of an Amadeus GDS flight search and booking platform — multi-tenant Go microservices (fetcher, session-manager) with Node.js, MongoDB and Puppeteer: automated GDS sessions with keepalive and exponential backoff, real-time Socket.IO updates, and per-client Docker/Traefik deployments.</li>
   </ul>
 </div>
 
 <h2>Skills</h2>
 <div class="skills">
   <p><b>Languages:</b> Python, Go, SQL</p>
-  <p><b>Backend:</b> FastAPI, Django / DRF, Gin, SQLAlchemy, microservices, REST, WebSockets, gRPC, Celery, RabbitMQ, async I/O</p>
+  <p><b>Backend:</b> FastAPI, Django / DRF, Gin, SQLAlchemy, WebSockets, gRPC, Celery, RabbitMQ, async I/O</p>
   <p><b>Data:</b> PostgreSQL (PostGIS, pgvector), Redis, MongoDB, MinIO/S3, Alembic</p>
   <p><b>AI / LLM:</b> LangGraph, LangChain, OpenAI, Gemini, RAG &amp; embeddings, agent tool design</p>
-  <p><b>Integrations:</b> bank internet-banking APIs, Payme / Click / Paynet, Soliq tax API, E-IMZO digital signing, Telegram bots (aiogram)</p>
-  <p><b>DevOps:</b> Docker, Kubernetes, GitLab CI/CD, GCP, Terraform, Prometheus, Grafana, Sentry, Playwright</p>
+  <p><b>Frontend:</b> React 19, TypeScript, TanStack (Router / Query / Table), Tailwind, Vite</p>
+  <p><b>Integrations:</b> Stripe, Telnyx, SendGrid, bank internet-banking APIs, Payme / Click / Paynet, Soliq tax API, E-IMZO signing, Telegram bots</p>
+  <p><b>DevOps:</b> Docker, Kubernetes, GitLab CI/CD, GCP, Terraform, Prometheus, Grafana, Sentry</p>
 </div>
 
 <h2>Education</h2>
@@ -66,7 +79,5 @@ backend team building a healthcare platform serving 11,000+ users.
   <div><b>Inha University in Tashkent</b> — B.Sc. Computer &amp; Information Engineering</div>
   <div class="job-dates">Sep 2023 – 2025</div>
 </div>
-<div class="muted">Completed 2 years (currently on academic break). Focus: Algorithms &amp; Data Structures, Systems, AI &amp; ML.</div>
-
-<h2>Languages</h2>
-<p>Uzbek — native · English — professional working proficiency</p>
+<div class="muted">Completed 2 years (currently on academic break). Focus: Algorithms &amp; Data Structures, Systems, AI &amp; ML.<br>
+Languages: Uzbek — native · English — professional working proficiency.</div>

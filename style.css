@@ -66,13 +66,13 @@ h1 { font-size: 2.135em; font-weight: 700; letter-spacing: -0.3px; line-height: 
 /* Sections */
 h2 {
   font-size: 1.180em; font-weight: 700; color: var(--accent);
-  margin: 2.1mm 0 0.6mm; padding-bottom: 0.6mm;
+  margin: 1.7mm 0 0.5mm; padding-bottom: 0.5mm;
   border-bottom: 0.5pt solid var(--rule);
 }
 .summary { margin-top: 1mm; }
 
 /* Jobs */
-.job { margin-top: 1.4mm; }
+.job { margin-top: 1.15mm; }
 .job:first-of-type { margin-top: 1mm; }
 .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
 .job-title { font-size: 1.079em; }
@@ -80,7 +80,7 @@ h2 {
 .job-dates { font-size: .966em; color: var(--muted); font-style: italic; white-space: nowrap; }
 .job-sub { font-size: .989em; color: var(--muted); font-style: italic; margin-top: 0.3mm; }
 ul { margin: 0.8mm 0 0 4.2mm; list-style: none; }
-li { margin-bottom: 0.45mm; padding-left: 2.6mm; position: relative; }
+li { margin-bottom: 0.28mm; padding-left: 2.6mm; position: relative; }
 li::before { content: "◦"; position: absolute; left: 0; color: var(--accent); }
 
 /* Skills */
@@ -110,8 +110,8 @@ li::before { content: "◦"; position: absolute; left: 0; color: var(--accent); 
   .bar { display: none !important; }
   .sheet {
     width: 210mm; max-width: none;
-    font-size: 8.9pt;
-    padding: 9mm 13mm 7mm;
+    font-size: 8.6pt;
+    padding: 8mm 12mm 5mm;
     box-shadow: none; border-radius: 0;
   }
   .sheet a { color: var(--accent); }
